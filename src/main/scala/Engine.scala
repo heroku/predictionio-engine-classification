@@ -4,17 +4,17 @@ import io.prediction.controller.EngineFactory
 import io.prediction.controller.Engine
 
 class Query(
-  val attr0 : Double,
-  val attr1 : Double,
-  val attr2 : Double
+  val voice_usage : Double,
+  val data_usage : Double,
+  val text_usage : Double
 ) extends Serializable
 
 class PredictedResult(
-  val label: Double
+  val service_plan: Double
 ) extends Serializable
 
 class ActualResult(
-  val label: Double
+  val service_plan: Double
 ) extends Serializable
 
 object ClassificationEngine extends EngineFactory {
