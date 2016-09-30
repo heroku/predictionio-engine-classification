@@ -30,16 +30,16 @@ class DataSource(val dsp: DataSourceParams)
       appName = dsp.appName,
       entityType = "user",
       // only keep entities with these required properties defined
-      required = Some(List("plan", "attr0", "attr1", "attr2")))(sc)
+      required = Some(List("service_plan", "voice_usage", "data_usage", "text_usage")))(sc)
       // aggregateProperties() returns RDD pair of
       // entity ID and its aggregated properties
       .map { case (entityId, properties) =>
         try {
           LabeledPoint(properties.get[Double]("plan"),
             Vectors.dense(Array(
-              properties.get[Double]("attr0"),
-              properties.get[Double]("attr1"),
-              properties.get[Double]("attr2")
+              properties.get[Double]("voice_usage"),
+              properties.get[Double]("data_usage"),
+              properties.get[Double]("text_usage")
             ))
           )
         } catch {
@@ -68,16 +68,16 @@ class DataSource(val dsp: DataSourceParams)
       appName = dsp.appName,
       entityType = "user",
       // only keep entities with these required properties defined
-      required = Some(List("plan", "attr0", "attr1", "attr2")))(sc)
+      required = Some(List("service_plan", "voice_usage", "data_usage", "text_usage")))(sc)
       // aggregateProperties() returns RDD pair of
       // entity ID and its aggregated properties
       .map { case (entityId, properties) =>
         try {
-          LabeledPoint(properties.get[Double]("plan"),
+          LabeledPoint(properties.get[Double]("service_plan"),
             Vectors.dense(Array(
-              properties.get[Double]("attr0"),
-              properties.get[Double]("attr1"),
-              properties.get[Double]("attr2")
+              properties.get[Double]("voice_usage"),
+              properties.get[Double]("data_usage"),
+              properties.get[Double]("text_usage")
             ))
           )
         } catch {
