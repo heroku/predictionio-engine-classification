@@ -35,7 +35,7 @@ class DataSource(val dsp: DataSourceParams)
       // entity ID and its aggregated properties
       .map { case (entityId, properties) =>
         try {
-          LabeledPoint(properties.get[Double]("plan"),
+          LabeledPoint(properties.get[Double]("service_plan"),
             Vectors.dense(Array(
               properties.get[Double]("voice_usage"),
               properties.get[Double]("data_usage"),
