@@ -1,0 +1,32 @@
+{
+  "id":"org.template.classification.AccuracyEvaluation$ 2016-09-19T21:02:49.044Z",
+  "description":"Best Classification for sample data",
+  "engineFactory":"org.template.classification.AccuracyEvaluation$",
+  "datasource":{
+    "name":"",
+    "params":{
+      "appName":"classi",
+      "evalK":5
+    }
+  },
+  "preparator":{
+    "name":"",
+    "params":{
+      
+    }
+  },
+  "algorithms":[
+    {
+      "name":"naive",
+      "params":{
+        "lambda":10.0
+      }
+    }
+  ],
+  "serving":{
+    "name":"",
+    "params":{
+      
+    }
+  }
+}
