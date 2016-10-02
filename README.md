@@ -9,6 +9,6 @@ Based on the [attribute-based classifier template](https://github.com/apache/inc
 
 Service plans are:
 
-* `1` **More Voice**: `0` + expanded voice to 1000 minutes
-* `2` **More Data**: `0` + expanded to 1000 megabytes
-* `2` **More Texts**: `0` + expanded to 1000 messages
+* `1` **More Voice**: expanded talk time to 1000 minutes
+* `2` **More Data**: expanded transfer quota to 1000 megabytes
+* `2` **More Texts**: expanded SMS to 1000 messages
