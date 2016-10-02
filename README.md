@@ -11,4 +11,4 @@ Service plans are:
 
 * `1` **More Voice**: expanded talk time to 1000 minutes
 * `2` **More Data**: expanded transfer quota to 1000 megabytes
-* `2` **More Texts**: expanded SMS to 1000 messages
+* `3` **More Texts**: expanded SMS to 1000 messages
