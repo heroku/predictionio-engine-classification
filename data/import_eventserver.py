@@ -42,5 +42,6 @@ if __name__ == '__main__':
     access_key=args.access_key,
     url=args.url,
     threads=5,
-    qsize=500)
+    qsize=500,
+    timeout=60)
   import_events(client, args.file)
