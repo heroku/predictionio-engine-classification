@@ -1,5 +1,5 @@
 {
-  "id":"org.template.classification.AccuracyEvaluation$ 2016-09-19T21:02:49.044Z",
+  "id":"org.template.classification.AccuracyEvaluation$ 2016-10-02T17:15:52.358Z",
   "description":"Best Classification for sample data",
   "engineFactory":"org.template.classification.AccuracyEvaluation$",
   "datasource":{
@@ -19,7 +19,7 @@
     {
       "name":"naive",
       "params":{
-        "lambda":10.0
+        "lambda":100.0
       }
     }
   ],
