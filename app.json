@@ -37,7 +37,7 @@
       "url": "https://github.com/heroku/heroku-buildpack-jvm-common.git"
     },
     {
-      "url": "https://github.com/heroku/predictionio-buildpack.git#testpack-api"
+      "url": "https://github.com/heroku/predictionio-buildpack.git#testpack-api-minimal"
     }
   ]
 }
