@@ -7,11 +7,8 @@ import org.apache.spark.mllib.classification.NaiveBayesModel
 import org.scalatest.FlatSpec
 import org.scalatest.Matchers
 
-class NaiveBayesAlgorithmTest
+class PreparatorTest
   extends FlatSpec with SharedSingletonContext with Matchers {
-
-  val params = AlgorithmParams(lambda = 10)
-  val algorithm = new NaiveBayesAlgorithm(params)
 
   val dataSource = Seq(
     LabeledPoint(0, Vectors.dense(1000, 10, 10)),
@@ -19,10 +16,10 @@ class NaiveBayesAlgorithmTest
     LabeledPoint(2, Vectors.dense(10, 10, 1000))
   )
 
-  "train" should "return NaiveBayes model" in {
+  "prepare" should "return synthetic features" in {
     val dataSourceRDD = sparkContext.parallelize(dataSource)
     val preparedData = new PreparedData(labeledPoints = dataSourceRDD)
-    val model = algorithm.train(sparkContext, preparedData)
-    model shouldBe a [NaiveBayesModel]
+
+    preparedData shouldBe a [PreparedData]
   }
 }

@@ -13,6 +13,9 @@ class PreparedData(
 class Preparator extends PPreparator[TrainingData, PreparedData] {
 
   def prepare(sc: SparkContext, trainingData: TrainingData): PreparedData = {
-    new PreparedData(trainingData.labeledPoints)
+    val synthData = trainingData.labeledPoints.map { case (labeledPoint) =>
+      labeledPoint
+    }
+    new PreparedData(synthData)
   }
 }
