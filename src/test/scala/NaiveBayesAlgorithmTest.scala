@@ -25,27 +25,4 @@ class NaiveBayesAlgorithmTest
     val model = algorithm.train(sc, preparedData)
     model shouldBe a [NaiveBayesModel]
   }
-
-  // val model = new CooccurrenceModel(
-  //   //
-  //   topCooccurrences = Map(
-  //     0 -> Array((1, 4), (2, 1)),
-  //     1 -> Array((0, 4), (2, 3), (3, 1)),
-  //     2 -> Array((1, 3), (3, 2), (0, 1)),
-  //     3 -> Array((2, 2), (1, 1))
-  //   ),
-  //   itemStringIntMap = BiMap(Map(
-  //     "i0" -> 0,
-  //     "i1" -> 1,
-  //     "i2" -> 2,
-  //     "i3" -> 3
-  //   )),
-  //   items = Map(
-  //     0 -> Item(categories = Some(List("c0", "c1"))),
-  //     1 -> Item(categories = None),
-  //     2 -> Item(categories = Some(List("c0", "c2"))),
-  //     3 -> Item(categories = Some(List("c0,", "c2", "c3")))
-  //   )
-  // )
-
 }
