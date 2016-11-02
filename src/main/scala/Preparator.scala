@@ -14,7 +14,8 @@ class Preparator extends PPreparator[TrainingData, PreparedData] {
 
   def prepare(sc: SparkContext, trainingData: TrainingData): PreparedData = {
     val synthData = trainingData.labeledPoints.map { case (labeledPoint) =>
-      labeledPoint
+      val transformedFeatures = SyntheticFeatures.transform(labeledPoint.features)
+      new LabeledPoint(labeledPoint.label, transformedFeatures)
     }
     new PreparedData(synthData)
   }
