@@ -13,6 +13,17 @@
       "params": {
         "lambda": 1.0
       }
+    },
+    {
+      "name": "randomforest",
+      "params": {
+        "numClasses": 7,
+        "numTrees": 12,
+        "featureSubsetStrategy": "auto",
+        "impurity": "gini",
+        "maxDepth": 4,
+        "maxBins": 100
+      }
     }
   ]
 }
