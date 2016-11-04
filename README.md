@@ -9,10 +9,10 @@ Based on the [attribute-based classifier template](https://github.com/apache/inc
 
 Service plans are:
 
+* `0` **Low Usage**: no services significantly utilized
 * `1` **More Voice**: expanded talk time to 1000 minutes
 * `2` **More Data**: expanded transfer quota to 1000 megabytes
 * `3` **More Texts**: expanded SMS to 1000 messages
 * `4` **Voice + Data**: expanded talk time & transfer quota
 * `5` **Data + Text**: expanded transfer quota & SMS
 * `6` **Voice + Text**: expanded talk time & SMS
-* `7` **Low Usage**: no services significantly utilized
