@@ -2,7 +2,6 @@ package org.template.classification
 
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.linalg.Vectors
-import org.apache.spark.mllib.classification.NaiveBayesModel
 
 import org.scalatest.FlatSpec
 import org.scalatest.Matchers
