@@ -39,10 +39,8 @@ class RandomForestAlgorithm(val ap: RandomForestAlgorithmParams)
   }
 
   def predict(model: RandomForestModel, query: Query): PredictedResult = {
-    val features = SyntheticFeatures.transform(
-      Vectors.dense(
-        Array(query.voice_usage, query.data_usage, query.text_usage)
-      )
+    val features = Vectors.dense(
+      Array(query.voice_usage, query.data_usage, query.text_usage)
     )
     val label = model.predict(features)
     new PredictedResult(label)

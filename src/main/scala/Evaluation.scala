@@ -30,10 +30,65 @@ object EngineParamsList extends EngineParamsGenerator {
   // algorithm parameters. In this case, we evaluate 3 engine params, each with
   // a different algorithm params value.
   engineParamsList = Seq(
-    baseEP.copy(algorithmParamsList = Seq(("naive", AlgorithmParams(0.01)))),
-    baseEP.copy(algorithmParamsList = Seq(("naive", AlgorithmParams(0.1)))),
-    baseEP.copy(algorithmParamsList = Seq(("naive", AlgorithmParams(1.0)))),
-    baseEP.copy(algorithmParamsList = Seq(("naive", AlgorithmParams(10.0)))),
-    baseEP.copy(algorithmParamsList = Seq(("naive", AlgorithmParams(100.0)))),
-    baseEP.copy(algorithmParamsList = Seq(("naive", AlgorithmParams(1000.0)))))
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 5, "auto", "gini", 4, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 7, "auto", "gini", 4, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 12, "auto", "gini", 4, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 19, "auto", "gini", 4, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 31, "auto", "gini", 4, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 5, "auto", "gini", 8, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 7, "auto", "gini", 8, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 12, "auto", "gini", 8, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 19, "auto", "gini", 8, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 31, "auto", "gini", 8, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 5, "auto", "gini", 16, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 7, "auto", "gini", 16, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 12, "auto", "gini", 16, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 19, "auto", "gini", 16, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 31, "auto", "gini", 16, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 5, "auto", "entropy", 4, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 7, "auto", "entropy", 4, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 12, "auto", "entropy", 4, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 19, "auto", "entropy", 4, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 31, "auto", "entropy", 4, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 5, "auto", "entropy", 8, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 7, "auto", "entropy", 8, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 12, "auto", "entropy", 8, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 19, "auto", "entropy", 8, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 31, "auto", "entropy", 8, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 5, "auto", "entropy", 16, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 7, "auto", "entropy", 16, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 12, "auto", "entropy", 16, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 19, "auto", "entropy", 16, 100)))),
+    baseEP.copy(algorithmParamsList = Seq(("randomforest", RandomForestAlgorithmParams(
+      7, 31, "auto", "entropy", 16, 100))))
+  )
 }
