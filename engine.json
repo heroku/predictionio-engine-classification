@@ -9,12 +9,6 @@
   },
   "algorithms": [
     {
-      "name": "naive",
-      "params": {
-        "lambda": 1.0
-      }
-    },
-    {
       "name": "randomforest",
       "params": {
         "numClasses": 7,
