@@ -2,7 +2,7 @@
 
 Demo engine for the [PredictionIO Heroku buildpack](https://github.com/heroku/predictionio-buildpack). See the 📚 [README](https://github.com/heroku/predictionio-buildpack/blob/master/README.md) for how-to.
 
-Based on the [attribute-based classifier template](https://github.com/apache/incubator-predictionio-template-attribute-based-classifier), minimally modified for machine learning on Heroku.
+Based on the [attribute-based classifier template](https://github.com/apache/incubator-predictionio-template-attribute-based-classifier), modified to use an [alternative algorithm](http://predictionio.incubator.apache.org/templates/classification/add-algorithm/), [Random Forests](https://en.wikipedia.org/wiki/Random_forest).
 
 
 ## [Data](data/) shape
