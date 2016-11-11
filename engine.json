@@ -19,7 +19,7 @@
     {
       "name":"randomforest",
       "params":{
-        "numClasses":7,
+        "numClasses":8,
         "numTrees":31,
         "featureSubsetStrategy":"auto",
         "impurity":"gini",

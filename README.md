@@ -16,3 +16,4 @@ Service plans are:
 * `4` **Voice + Data**: expanded talk time & transfer quota
 * `5` **Data + Text**: expanded transfer quota & SMS
 * `6` **Voice + Text**: expanded talk time & SMS
+* `7` **More Everything**: all services used evenly
