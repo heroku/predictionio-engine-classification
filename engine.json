@@ -1,5 +1,5 @@
 {
-  "id":"org.template.classification.AccuracyEvaluation$ 2016-11-05T00:19:20.286Z",
+  "id":"org.template.classification.AccuracyEvaluation$ 2016-11-11T23:22:00.000Z",
   "description":"",
   "engineFactory":"org.template.classification.AccuracyEvaluation$",
   "datasource":{
@@ -20,7 +20,7 @@
       "name":"randomforest",
       "params":{
         "numClasses":8,
-        "numTrees":31,
+        "numTrees":34,
         "featureSubsetStrategy":"auto",
         "impurity":"gini",
         "maxDepth":4,
