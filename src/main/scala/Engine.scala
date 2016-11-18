@@ -22,7 +22,8 @@ object ClassificationEngine extends EngineFactory {
     new Engine(
       classOf[DataSource],
       classOf[Preparator],
-      Map("naive" -> classOf[NaiveBayesAlgorithm]),
+      Map(
+        "randomforest"  -> classOf[RandomForestAlgorithm]),
       classOf[Serving])
   }
 }
