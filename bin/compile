@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Fail immediately on non-zero exit code.
+set -e
+# Fail immediately on non-zero exit code within a pipeline.
+set -o pipefail
+# Fail on undeclared variables.
+set -u
+# Debug, echo every command
+#set -x
+
+# parse and derive params
+BUILD_DIR=${1:-}
+CACHE_DIR=${2:-}
+ENV_DIR=${3:-}
+BP_DIR=$(dirname $(dirname ${0:-}))
+
+mv $BP_DIR/conf/nginx.conf.erb $BUILD_DIR/space-proxy/conf/

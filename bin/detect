@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "PredictionIO multi-process engine"
+exit 0
