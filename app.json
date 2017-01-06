@@ -1,5 +1,5 @@
 {
-  "name": "PredictionIO classification engine",
+  "name": "PredictionIO classifier demo",
   "description": "An attribute-based classifier using Random Forests algorithm",
   "repository": "https://github.com/heroku/predictionio-engine-classification",
   "keywords": [
@@ -35,7 +35,7 @@
   "buildpacks": [
     {
       "url": "https://github.com/heroku/heroku-buildpack-addon-wait.git"
-    }
+    },
     {
       "url": "https://github.com/heroku/heroku-buildpack-space-proxy.git"
     },
