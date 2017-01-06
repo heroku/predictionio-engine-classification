@@ -4,7 +4,7 @@
   "engineFactory": "org.template.classification.ClassificationEngine",
   "datasource": {
     "params": {
-      "appName": "classi"
+      "appName": "heroku-default-app"
     }
   },
   "algorithms": [

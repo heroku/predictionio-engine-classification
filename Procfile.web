@@ -1,0 +1,3 @@
+proxy: bin/space-proxy
+eventserver: pio eventserver --port 8000
+engine: PORT=8001 PIO_EVENTSERVER_HOSTNAME=127.0.0.1 PIO_EVENTSERVER_PORT=8000 bin/heroku-buildpack-pio-web

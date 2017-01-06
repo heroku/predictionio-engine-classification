@@ -1,18 +1,21 @@
 {
-  "name": "predictionio-engine-classification",
-  "scripts": {},
+  "name": "PredictionIO classification engine",
+  "description": "An attribute-based classifier using Random Forests algorithm",
+  "repository": "https://github.com/heroku/predictionio-engine-classification",
+  "keywords": [
+    "predictionio",
+    "machine learning",
+    "spark",
+    "sparkml"
+  ],
   "env": {
     "PIO_EVENTSERVER_ACCESS_KEY": {
-      "required": true
+      "description": "A unique, auto-generated secret key for the PIO Eventserver API",
+      "generator": "secret"
     },
-    "PIO_EVENTSERVER_APP_NAME": {
-      "required": true
-    },
-    "PIO_EVENTSERVER_HOSTNAME": {
-      "required": true
-    },
-    "PIO_EVENTSERVER_PORT": {
-      "required": true
+    "PREDICTIONIO_DIST_URL": {
+      "description": "Source tarball to use for PredictionIO. Pre-populated with alpha version to support this app's deployment. Leave blank for latest stable release.",
+      "value": "https://marsikai.s3.amazonaws.com/PredictionIO-0.11.0-alpha-stateless.tar.gz"
     }
   },
   "formation": {
@@ -29,15 +32,21 @@
       "size": "Performance-L"
     }
   },
-  "addons": [
-    "heroku-postgresql"
-  ],
   "buildpacks": [
     {
-      "url": "https://github.com/heroku/heroku-buildpack-jvm-common.git"
+      "url": "https://github.com/heroku/heroku-buildpack-addon-wait.git"
+    }
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-space-proxy.git"
+    },
+    {
+      "url": "heroku/scala"
     },
     {
       "url": "https://github.com/heroku/predictionio-buildpack.git"
+    },
+    {
+      "url": "https://github.com/codeship/heroku-buildpack-runit.git"
     }
   ]
 }
