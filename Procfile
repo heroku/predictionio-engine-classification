@@ -1,3 +1,3 @@
 web: bin/runsvdir-dyno
 train: bin/heroku-buildpack-pio-train
-release: bin/setup && bin/heroku-buildpack-pio-release
+release: bin/setup-and-release-phase
