@@ -32,6 +32,9 @@
       "size": "Performance-L"
     }
   },
+  "addons": [
+    "heroku-postgresql"
+  ],
   "buildpacks": [
     {
       "url": "https://github.com/heroku/heroku-buildpack-addon-wait.git"
