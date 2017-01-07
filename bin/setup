@@ -13,12 +13,18 @@ EVENTSERVER_APP_NAME=heroku-default-app
 
 bin/addon-wait
 
+if [ -z "$DATABASE_URL" ]
+then
+  echo "PredictionIO requires a DATABASE_URL to run. Exiting to await that config."
+  exit
+fi
+
 # Only setup the Eventserver app once
 set +e # allow non-zero exit codes
 pio app show $EVENTSERVER_APP_NAME
 if [ $? -eq 0 ]
 then
-  echo "PredictionIO Eventserver app is already setup"
+  echo "PredictionIO Eventserver app is already setup."
   exit
 fi
 set -e
