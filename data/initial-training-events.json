@@ -21,7 +21,7 @@
 {"event":"$set","entityType":"user","entityId":"21","properties":{"voice_usage":980,"data_usage":1,"text_usage":150,"service_plan":1}}
 {"event":"$set","entityType":"user","entityId":"22","properties":{"voice_usage":480,"data_usage":15,"text_usage":15,"service_plan":1}}
 {"event":"$set","entityType":"user","entityId":"23","properties":{"voice_usage":670,"data_usage":150,"text_usage":8,"service_plan":1}}
-24    ,1,290 150 150 
+{"event":"$set","entityType":"user","entityId":"25","properties":{"voice_usage":290,"data_usage":150,"text_usage":150,"service_plan":1}}
 {"event":"$set","entityType":"user","entityId":"25","properties":{"voice_usage":640,"data_usage":230,"text_usage":188,"service_plan":1}}
 {"event":"$set","entityType":"user","entityId":"26","properties":{"voice_usage":443,"data_usage":180,"text_usage":87,"service_plan":1}}
 {"event":"$set","entityType":"user","entityId":"27","properties":{"voice_usage":807,"data_usage":122,"text_usage":88,"service_plan":1}}
