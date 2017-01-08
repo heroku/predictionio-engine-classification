@@ -17,8 +17,7 @@ then
   exit
 fi
 
-# Wait until the database is alive.
-echo "Awaiting connection to DATABASE_URL"
+                # Wait until the database is alive.**
 bin/addon-wait
 
 # Only setup the Eventserver app once
@@ -36,7 +35,7 @@ then
   EVENTSERVER_APP_ID=`cat app-new-out.log | ruby -E utf-8:utf-8 -e 'STDOUT << /id:\s+(\w+)/i.match(STDIN.read)[1]'`
 
   echo "Importing sample events for training to App ID $EVENTSERVER_APP_ID"
-  pio import --appid $EVENTSERVER_APP_ID --input data/initial-training-events.json
+  eval "pio import --appid $EVENTSERVER_APP_ID --input data/initial-training-events.json -- --driver-class-path /app/lib/postgresql_jdbc.jar"
 else
   set -e
   echo "Found '$EVENTSERVER_APP_NAME' in the eventserver. Skipping setup."
