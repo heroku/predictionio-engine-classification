@@ -20,15 +20,12 @@
   },
   "formation": {
     "release": {
-      "quantity": 0,
       "size": "Performance-L"
     },
     "train": {
-      "quantity": 0,
       "size": "Performance-L"
     },
     "web": {
-      "quantity": 1,
       "size": "Standard-2X"
     }
   },
