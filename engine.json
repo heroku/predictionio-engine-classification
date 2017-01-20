@@ -5,7 +5,7 @@
   "datasource":{
     "name":"",
     "params":{
-      "appName":"classi",
+      "appName":"heroku-default-app",
       "evalK":5
     }
   },
