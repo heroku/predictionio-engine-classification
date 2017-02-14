@@ -137,17 +137,7 @@ heroku config:set \
 
 ### Import data
 
-🚨 Mandatory: data is required for training. The model cannot answer predictive queries until trained with data.
-
-When deployed, the engine will automatically train a model to predict the best fitting **service plan** for a **mobile phone user** based on their **voice, data, and text usage**. We'll use the engine's [example data and import script](https://github.com/heroku/predictionio-engine-classification/tree/master/data) for initial training.
-
-* `pip install predictionio` may be required before the import script will run; see [how-to install pip](https://pip.pypa.io/en/stable/installing/)
-
-```bash
-python ./data/import_eventserver.py \
-  --url https://$EVENTSERVER_NAME.herokuapp.com \
-  --access_key $PIO_APP_ACCESS_KEY
-```
+Initial training data is automatically imported from [`data/initial-events.json`](data/initial-events.json). (This used to be a manual step that we automated using Heroku's [release phase](https://devcenter.heroku.com/articles/release-phase).)
 
 ### Deploy the engine
 
