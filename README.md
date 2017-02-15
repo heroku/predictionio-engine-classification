@@ -121,18 +121,17 @@ heroku addons:info heroku-postgresql --app $EVENTSERVER_NAME
 heroku addons:attach $POSTGRES_ADDON_ID --app $ENGINE_NAME
 ```
 
-#### Get an access key for this engine's data
+#### Set an access key for this engine's data
 
 ```bash
-heroku run 'pio app new classi' --app $EVENTSERVER_NAME
-#
-# Use the returned access key for `$PIO_APP_ACCESS_KEY`
-#
+# Generate a random key.
+export ACCESS_KEY="$RANDOM-$RANDOM-$RANDOM-$RANDOM"
+
 heroku config:set \
   PIO_EVENTSERVER_HOSTNAME=$EVENTSERVER_NAME.herokuapp.com \
   PIO_EVENTSERVER_PORT=80 \
-  PIO_EVENTSERVER_ACCESS_KEY=$PIO_APP_ACCESS_KEY \
-  PIO_EVENTSERVER_APP_NAME=classi
+  PIO_EVENTSERVER_ACCESS_KEY=$ACCESS_KEY \
+  PIO_EVENTSERVER_APP_NAME=classi # must match `appName` in engine.json
 ```
 
 ### Import data
