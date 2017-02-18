@@ -138,6 +138,8 @@ heroku config:set \
 
 Initial training data is automatically imported from [`data/initial-events.json`](data/initial-events.json). (This used to be a manual step that we automated using Heroku's [release phase](https://devcenter.heroku.com/articles/release-phase).)
 
+👓 When you're ready to begin working with your own data, see [data import methods in CUSTOM docs](https://github.com/heroku/predictionio-buildpack/blob/master/CUSTOM.md#import-data).
+
 ### Deploy the engine
 
 ```bash
