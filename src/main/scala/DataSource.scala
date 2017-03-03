@@ -13,7 +13,6 @@ import org.apache.spark.mllib.linalg.Vectors
 import grizzled.slf4j.Logger
 
 case class DataSourceParams(
-  appName: String,
   evalK: Option[Int]  // define the k-fold parameter.
 ) extends Params
 
@@ -27,7 +26,7 @@ class DataSource(val dsp: DataSourceParams)
   def readTraining(sc: SparkContext): TrainingData = {
 
     val labeledPoints: RDD[LabeledPoint] = PEventStore.aggregateProperties(
-      appName = dsp.appName,
+      appName = sys.env("PIO_EVENTSERVER_APP_NAME"),
       entityType = "user",
       // only keep entities with these required properties defined
       required = Some(List("service_plan", "voice_usage", "data_usage", "text_usage")))(sc)
@@ -65,7 +64,7 @@ class DataSource(val dsp: DataSourceParams)
     // into a helper function and have both readTraining and readEval call the
     // helper.
     val labeledPoints: RDD[LabeledPoint] = PEventStore.aggregateProperties(
-      appName = dsp.appName,
+      appName = sys.env("PIO_EVENTSERVER_APP_NAME"),
       entityType = "user",
       // only keep entities with these required properties defined
       required = Some(List("service_plan", "voice_usage", "data_usage", "text_usage")))(sc)

@@ -5,7 +5,6 @@
   "datasource":{
     "name":"",
     "params":{
-      "appName":"classi",
       "evalK":5
     }
   },

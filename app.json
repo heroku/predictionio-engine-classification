@@ -3,15 +3,18 @@
   "scripts": {},
   "env": {
     "PIO_EVENTSERVER_ACCESS_KEY": {
-      "required": true
+      "description": "A unique, auto-generated secret key for the PIO Eventserver API",
+      "generator": "secret"
     },
     "PIO_EVENTSERVER_APP_NAME": {
+      "value": "classi",
       "required": true
     },
     "PIO_EVENTSERVER_HOSTNAME": {
       "required": true
     },
     "PIO_EVENTSERVER_PORT": {
+      "value": "443",
       "required": true
     }
   },

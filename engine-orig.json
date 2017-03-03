@@ -4,7 +4,6 @@
   "engineFactory": "org.template.classification.ClassificationEngine",
   "datasource": {
     "params": {
-      "appName": "classi"
     }
   },
   "algorithms": [
