@@ -107,36 +107,24 @@ heroku buildpacks:add -i 2 https://github.com/heroku/predictionio-buildpack.git
 
 ### Connect the engine with the eventserver
 
-First, collect a few configuration values.
-
-#### Get the eventserver's database add-on ID
-
 ```bash
-heroku addons:info heroku-postgresql --app $EVENTSERVER_NAME
+# Find the Postgres add-on ID for the eventserver.
+heroku addons --app $EVENTSERVER_NAME
 #
-# Use the returned Postgres add-on ID
-# to attach it to the engine.
-# Example: `postgresql-aerodynamic-00000`
+# Example: `heroku-postgresql (postgresql-aerodynamic-00000)`
+#   `postgresql-aerodynamic-00000` is the add-on ID.
 #
-heroku addons:attach $POSTGRES_ADDON_ID --app $ENGINE_NAME
-```
+heroku addons:attach $POSTGRES_ADDON_ID
 
-#### Set an access key for this engine's data
-
-```bash
-# Generate a random key.
-export ACCESS_KEY="$RANDOM-$RANDOM-$RANDOM-$RANDOM"
-
+# Then preset the Eventserver app name & key,
 heroku config:set \
-  PIO_EVENTSERVER_HOSTNAME=$EVENTSERVER_NAME.herokuapp.com \
-  PIO_EVENTSERVER_PORT=80 \
-  PIO_EVENTSERVER_ACCESS_KEY=$ACCESS_KEY \
-  PIO_EVENTSERVER_APP_NAME=classi # must match `appName` in engine.json
+  PIO_EVENTSERVER_APP_NAME=classi-compat-000 \
+  PIO_EVENTSERVER_ACCESS_KEY=$RANDOM-$RANDOM-$RANDOM-$RANDOM-$RANDOM
 ```
 
 ### Import data
 
-Initial training data is automatically imported from [`data/initial-events.json`](data/initial-events.json). (This used to be a manual step that we automated using Heroku's [release phase](https://devcenter.heroku.com/articles/release-phase).)
+Initial training data is automatically imported from [`data/initial-events.json`](data/initial-events.json).
 
 👓 When you're ready to begin working with your own data, see [data import methods in CUSTOM docs](https://github.com/heroku/predictionio-buildpack/blob/master/CUSTOM.md#import-data).
 
@@ -145,10 +133,9 @@ Initial training data is automatically imported from [`data/initial-events.json`
 ```bash
 git push heroku master
 
-# Follow the logs to see training 
-# and then start-up of the engine.
+# Follow the logs to see training & web start-up
 #
-heroku logs -t --app $ENGINE_NAME
+heroku logs -t
 ```
 
 ⚠️ **Initial deploy will probably fail due to memory constraints.** Proceed to scale up.
@@ -161,13 +148,21 @@ Once deployed, scale up the processes and config Spark to avoid memory issues. T
 heroku ps:scale \
   web=1:Standard-2X \
   release=0:Performance-L \
-  train=0:Performance-L \
-  --app $ENGINE_NAME
+  train=0:Performance-L
 ```
 
 ## Retry release
 
-When the release (`pio train`) fails due to memory constraints or other transient error, you may use the Heroku CLI [releases:retry plugin](https://github.com/heroku/heroku-releases-retry) to rerun the release without pushing a new deployment.
+When the release (`pio train`) fails due to memory constraints or other transient error, you may use the Heroku CLI [releases:retry plugin](https://github.com/heroku/heroku-releases-retry) to rerun the release without pushing a new deployment:
+
+```bash
+# First time, install it.
+heroku plugins:install heroku-releases-retry
+
+# Re-run the release & watch the logs
+heroku releases:retry
+heroku logs -t
+```
 
 
 # Usage ⌨️
