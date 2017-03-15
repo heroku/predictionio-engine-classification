@@ -33,15 +33,15 @@ Please follow steps in order.
 
 1. [Requirements](#1-requirements)
 1. [Eventserver](#2-eventserver)
-  1. [Create the eventserver](#create-the-eventserver)
-  1. [Deploy the eventserver](#deploy-the-eventserver)
+   1. [Create the eventserver](#create-the-eventserver)
+   1. [Deploy the eventserver](#deploy-the-eventserver)
 1. [Classification engine](#3-classification-engine)
-  1. [Create the engine](#create-the-engine)
-  1. [Connect the engine with the eventserver](#connect-the-engine-with-the-eventserver)
-  1. [Import data](#import-data)
-  1. [Deploy the engine](#deploy-the-engine)
-  1. [Scale-up](#scale-up)
-  1. [Retry release](#retry-release)
+   1. [Create the engine](#create-the-engine)
+   1. [Connect the engine with the eventserver](#connect-the-engine-with-the-eventserver)
+   1. [Import data](#import-data)
+   1. [Deploy the engine](#deploy-the-engine)
+   1. [Scale-up](#scale-up)
+   1. [Retry release](#retry-release)
 
 ### Usage
 
