@@ -118,7 +118,7 @@ heroku addons:attach $POSTGRES_ADDON_ID
 
 # Then preset the Eventserver app name & key,
 heroku config:set \
-  PIO_EVENTSERVER_APP_NAME=classi-compat-000 \
+  PIO_EVENTSERVER_APP_NAME=classi \
   PIO_EVENTSERVER_ACCESS_KEY=$RANDOM-$RANDOM-$RANDOM-$RANDOM-$RANDOM
 ```
 
