@@ -42,6 +42,8 @@ Please follow steps in order.
    1. [Deploy the engine](#deploy-the-engine)
    1. [Scale-up](#scale-up)
    1. [Retry release](#retry-release)
+1. [Diagnostics](#diagnostics)
+1. [Local development](#local-development)
 
 ### Usage
 
@@ -231,3 +233,9 @@ If errors are occuring, sometimes a restart will help:
 ```bash
 heroku restart --app $ENGINE_NAME
 ```
+
+## Local Development
+
+Deployment to Heroku is great, but if you want to customize an engine, then you'll need to get it running locally on your computer.
+
+Use the buildpack to setup [local development](https://github.com/heroku/predictionio-buildpack/blob/master/DEV.md).
