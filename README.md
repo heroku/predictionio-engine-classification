@@ -65,8 +65,6 @@ Once deployed, how to work with the engine.
 
 ### Create the eventserver
 
-⚠️ **An eventserver may host data for multiple engines.** If you already have one provisioned, you may skip to the [engine](#3-classification-engine).
-
 ```bash
 git clone \
   https://github.com/heroku/predictionio-buildpack.git \
@@ -76,9 +74,7 @@ cd pio-eventserver
 
 heroku create $EVENTSERVER_NAME
 heroku addons:create heroku-postgresql:hobby-dev
-# Note the buildpacks differ for eventserver & engine (below)
-heroku buildpacks:add -i 1 https://github.com/heroku/predictionio-buildpack.git
-heroku buildpacks:add -i 2 heroku/scala
+heroku buildpacks:set https://github.com/heroku/predictionio-buildpack.git
 ```
 
 ### Deploy the eventserver
@@ -102,9 +98,7 @@ git clone \
 cd pio-engine-classi
 
 heroku create $ENGINE_NAME
-# Note the buildpacks differ for eventserver (above) & engine
-heroku buildpacks:add -i 1 https://github.com/heroku/heroku-buildpack-jvm-common.git
-heroku buildpacks:add -i 2 https://github.com/heroku/predictionio-buildpack.git
+heroku buildpacks:set https://github.com/heroku/predictionio-buildpack.git
 ```
 
 ### Connect the engine with the eventserver
