@@ -31,13 +31,9 @@ The **service plans** labelled in the [included training data](data/) are:
 
 Please follow steps in order.
 
-1. [Requirements](#1-requirements)
-1. [Eventserver](#2-eventserver)
-   1. [Create the eventserver](#create-the-eventserver)
-   1. [Deploy the eventserver](#deploy-the-eventserver)
-1. [Classification engine](#3-classification-engine)
+1. [Requirements](#requirements)
+1. [Classification engine](#classification-engine)
    1. [Create the engine](#create-the-engine)
-   1. [Connect the engine with the eventserver](#connect-the-engine-with-the-eventserver)
    1. [Import data](#import-data)
    1. [Deploy the engine](#deploy-the-engine)
    1. [Scale-up](#scale-up)
@@ -55,38 +51,13 @@ Once deployed, how to work with the engine.
 
 # Deploy to Heroku 🚀
 
-## 1. Requirements
+## Requirements
 
 * [Heroku account](https://signup.heroku.com)
 * [Heroku CLI](https://toolbelt.heroku.com), command-line tools
 * [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-## 2. Eventserver
-
-### Create the eventserver
-
-```bash
-git clone \
-  https://github.com/heroku/predictionio-buildpack.git \
-  pio-eventserver
-
-cd pio-eventserver
-
-heroku create $EVENTSERVER_NAME
-heroku addons:create heroku-postgresql:hobby-dev
-heroku buildpacks:set https://github.com/heroku/predictionio-buildpack.git
-```
-
-### Deploy the eventserver
-
-We delay deployment until the database is ready.
-
-```bash
-heroku pg:wait && git push heroku master
-```
-
-
-## 3. Classification Engine
+## Classification Engine
 
 ### Create the engine
 
@@ -99,23 +70,7 @@ cd pio-engine-classi
 
 heroku create $ENGINE_NAME
 heroku buildpacks:set https://github.com/heroku/predictionio-buildpack.git
-```
-
-### Connect the engine with the eventserver
-
-```bash
-# Find the Postgres add-on ID for the eventserver.
-heroku addons --app $EVENTSERVER_NAME
-#
-# Example: `heroku-postgresql (postgresql-aerodynamic-00000)`
-#   `postgresql-aerodynamic-00000` is the add-on ID.
-#
-heroku addons:attach $POSTGRES_ADDON_ID
-
-# Then preset the Eventserver app name & key,
-heroku config:set \
-  PIO_EVENTSERVER_APP_NAME=classi \
-  PIO_EVENTSERVER_ACCESS_KEY=$RANDOM-$RANDOM-$RANDOM-$RANDOM-$RANDOM
+heroku addons:create heroku-postgresql:hobby-dev
 ```
 
 ### Import data
@@ -127,9 +82,12 @@ Initial training data is automatically imported from [`data/initial-events.json`
 ### Deploy the engine
 
 ```bash
+# Wait to deploy until the database is ready
+heroku pg:wait
+
 git push heroku master
 
-# Follow the logs to see training & web start-up
+# Follow the logs to see web process start-up
 #
 heroku logs -t
 ```
@@ -138,7 +96,7 @@ heroku logs -t
 
 ## Scale up
 
-Once deployed, scale up the processes and config Spark to avoid memory issues. These are paid, [professional dyno types](https://devcenter.heroku.com/articles/dyno-types#available-dyno-types):
+Once deployed, scale up the processes. These are paid, [professional dyno types](https://devcenter.heroku.com/articles/dyno-types#available-dyno-types):
 
 ```bash
 heroku ps:scale \
