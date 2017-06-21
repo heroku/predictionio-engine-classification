@@ -191,6 +191,21 @@ heroku restart --app $ENGINE_NAME
 
 ## Local Development
 
-Deployment to Heroku is great, but if you want to customize an engine, then you'll need to get it running locally on your computer.
+If you want to customize an engine, then you'll need to get it running locally on your computer.
 
-Use the buildpack to setup [local development](https://github.com/heroku/predictionio-buildpack/blob/master/DEV.md).
+First, use the buildpack to setup [local development](https://github.com/heroku/predictionio-buildpack/blob/master/DEV.md).
+
+### Import sample data
+
+```bash
+bin/pio app new classi
+PIO_EVENTSERVER_APP_NAME=classi data/import-events -f data/initial-events.json
+```
+
+### Run `pio`
+
+```bash
+bin/pio build
+bin/pio train
+bin/pio deploy
+```
