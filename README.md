@@ -31,22 +31,21 @@ The **service plans** labelled in the [included training data](data/) are:
 
 Please follow steps in order.
 
-1. [Requirements](#requirements)
-1. [Classification engine](#classification-engine)
-   1. [Create the engine](#create-the-engine)
-   1. [Import data](#import-data)
-   1. [Deploy the engine](#deploy-the-engine)
-   1. [Scale-up](#scale-up)
-   1. [Retry release](#retry-release)
-1. [Diagnostics](#diagnostics)
-1. [Local development](#local-development)
+1. [Requirements](#user-content-requirements)
+1. [Classification engine](#user-content-classification-engine)
+   1. [Create the engine](#user-content-create-the-engine)
+   1. [Import data](#user-content-import-data)
+   1. [Deploy the engine](#user-content-deploy-the-engine)
+   1. [Scale-up](#user-content-scale-up)
+   1. [Retry release](#user-content-retry-release)
+1. [Local development](#user-content-local-development)
 
 ### Usage
 
 Once deployed, how to work with the engine.
 
-* 🎯 [Query for predictions](#query-for-predictions)
-* [Diagnostics](#diagnostics)
+* 🎯 [Query for predictions](#user-content-query-for-predictions)
+* [Diagnostics](#user-content-diagnostics)
 
 
 # Deploy to Heroku 🚀
@@ -80,7 +79,7 @@ heroku config:set \
 
 Initial training data is automatically imported from [`data/initial-events.json`](data/initial-events.json).
 
-👓 When you're ready to begin working with your own data, see [data import methods in CUSTOM docs](https://github.com/heroku/predictionio-buildpack/blob/master/CUSTOM.md#import-data).
+👓 When you're ready to begin working with your own data, see [data import methods in CUSTOM docs](https://github.com/heroku/predictionio-buildpack/blob/master/CUSTOM.md#user-content-import-data).
 
 ### Deploy the engine
 
@@ -128,7 +127,7 @@ heroku logs -t
 
 Once deployment completes, the engine is ready to predict the best fitting **service plan** for a **mobile phone user** based on their **voice, data, and text usage**.
 
-Submit queries containing these three user attributes to get predictions using [Spark's Random Forests algorithm](https://spark.apache.org/docs/1.6.2/mllib-ensembles.html):
+Submit queries containing these three user attributes to get predictions using [Spark's Random Forests algorithm](https://spark.apache.org/docs/2.1.0/mllib-ensembles.html):
 
 ```bash
 # Fits low usage, `0`
@@ -193,7 +192,7 @@ heroku restart --app $ENGINE_NAME
 
 If you want to customize an engine, then you'll need to get it running locally on your computer.
 
-First, use the buildpack to setup [local development](https://github.com/heroku/predictionio-buildpack/blob/master/DEV.md).
+➡️ **Setup [local development](https://github.com/heroku/predictionio-buildpack/blob/master/DEV.md)**
 
 ### Import sample data
 
