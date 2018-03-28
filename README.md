@@ -1,3 +1,5 @@
+⚠️ **This project is no longer active.** No further updates are planned.
+
 # [PredictionIO](https://predictionio.incubator.apache.org) classification engine for [Heroku](http://www.heroku.com) 
 
 A machine learning classifier deployable to Heroku with the [PredictionIO buildpack](https://github.com/heroku/predictionio-buildpack).
